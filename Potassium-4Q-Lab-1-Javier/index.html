@@ -1,42 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>My First Website</title>
 
-        <meta charset="UTF-8">
-        <meta name= "author" conenent="jef">
-    </head>
-    <body>
-        <form name="checkoutForm" action="checkout.html" onsubmit="return validateForm();">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" required>
+<head>
+    <title>My First Webpage</title>
 
-            <br><br>
-            
-            <input type="cart" name="apple" id="apple">
-            <label for="apple">Apple : P50/piece</label>
-            <br>
-            <label for="amount_apple">Amount:</label>
-            <input type="number" name="amount_apple" id="amount_apple" required min="0" placeholder="how many?">
+    <meta charset="UTF-8">
+    <meta name="author" content="jef">
 
-            <br><br>
+</head>
 
-            <input type="cart" name="juice" id="juice">
-            <label for="juice">Juice : P20/piece</label>
-            <br>
-            <label for="amount_juice">Amount:</label>
-            <input type="number" name="amount_juice"id="amount_juice" required min="0" placeholder="how many do you want?">
+<body>
+    <form name="information" action="checkout.html" onsubmit="validInformation()">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" >
+        <br><br>
+        <label for="apple">How many apple do you want to purchase? </label>
+        <input type="number" name="apple" id="apple" min="0" required>
+        <br><br>
+        <label for="juice">How many juice do you want to purchase? </label>
+        <input type="number" name="juice" id="juice" min="0" required>
+        <br><br>
+        <label for="pay">How much money do you have? </label>
+        <input type="number" name="pay" id="pay" min="0" required>
+        <br><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    <script src="index.js"></script>
+</body>
 
-            <br><br>
-
-            <label for="money">Money for Payment</label>
-            <input type="number" name="money" id="money" required>
-
-            <br><br>
-
-            <button type="submit">Submit</button>
-        </form>
-
-        <script src="index.js"></script>
-    </body>
-<html>
+</html>
