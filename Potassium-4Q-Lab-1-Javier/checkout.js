@@ -1,25 +1,27 @@
 const QUERY = window.location.search;
-const PARAMS = new URLSearchParams(QUERY);
+const PARAMS = new URLSearchParams(QUERY)
 
-function processData() {
-    let username = PARAMS.get("username");
-    document.getElementById("greetings").innerText = `Hello, ${username}`;
 
-    let money = PARAMS.get("money");
-    document.getElementById("money").innerText = `You paid Php ${money} `;
+function checkOut() {
+    let name = PARAMS.get("name");
+    document.getElementById("greetings").innerText = `Hello, ${name}!`;
 
-    let apple = PARAMS.get("apple")
+    let apple = PARAMS.get("apple");
+    document.getElementById("apple").innerText = `You purchased ${apple} pcs of apple.`;
 
-    let juice = PARAMS.get("juice")
+    let juice = PARAMS.get("juice");
+    document.getElementById("juice").innerText = `You purchased ${juice} pcs of juice.`;
 
-    let change = money - (apple*60 + juice*60)
+    let result = (((apple) * 40) + ((juice) * 20));
+    document.getElementById("result").innerText = `Your total is ${result} pesos.`;
 
-    let result = (change);
-    if (result >= 0) {
-        result = "Thank you for shopping."
-    } else {
-        result = "Pay up!"
+    let pay = PARAMS.get("pay");
+    document.getElementById("pay").innerText = `You paid ${pay} pesos.`;
+
+    let change = pay - result;
+    if (pay < result) {
+        change = document.getElementById("change").innerText = "Your money is not enough.";
+    } else if (pay > result) {
+        document.getElementById("change").innerText = `Your change is ${change} pesos.`;
     }
-
-    document.getElementById("result").innerText = `${result}`
 }
