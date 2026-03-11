@@ -1,9 +1,7 @@
-function validateForm() {
-    let username = document.forms["checkout-form"]["username"].value = username.trim();
-    if (username.trim() === "") {
-        alert("Enter name!");
+function validInformation() {
+    let name = document.forms["information"]["name"].value;
+    if (name.trim() === "") {
+        alert("Username is empty!");
         return false;
     }
-
-    return true;
 }
